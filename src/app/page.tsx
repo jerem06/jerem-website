@@ -1,9 +1,5 @@
 import { NavBar } from "@/components/features";
 
 export default function Home() {
-  return (
-    <>
-      <NavBar />
-    </>
-  );
+  return <div>this is the home page</div>;
 }

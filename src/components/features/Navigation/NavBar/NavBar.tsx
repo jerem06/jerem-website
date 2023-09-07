@@ -4,6 +4,7 @@ import { Divider, Text } from "@/components/atoms";
 import { Button } from "@/components/molecules";
 import { useState } from "react";
 import { NabBarLogo } from "../components";
+import Link from "next/link";
 
 export const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,19 +26,14 @@ export const NavBar = () => {
       >
         <Divider />
         <div className="lg:flex-grow space-x-5">
-          <Button>
-            <Text>test</Text>
-          </Button>
-          <Button>
-            <Text>test</Text>
-          </Button>
-          <Button>
-            <Text>test</Text>
-          </Button>
+          <Link href="/">Home</Link>
+          <Link href="/education">Education</Link>
         </div>
         <Divider />
         <Button className="mr-5" variant="classic">
-          Me Contacter
+          <Text variant="body" className="text-buttonText">
+            Me Contacter
+          </Text>
         </Button>
       </div>
     </div>

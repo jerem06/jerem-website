@@ -54,4 +54,5 @@ module.exports = {
     200: "#f9bc604d",
     100: "#f9bc6033",
   },
+  buttonText: "#001e1d",
 };
