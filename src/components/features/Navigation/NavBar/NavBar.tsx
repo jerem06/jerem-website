@@ -3,8 +3,8 @@
 import { Divider, Text } from "@/components/atoms";
 import { Button } from "@/components/molecules";
 import { useState } from "react";
-import { NabBarLogo } from "../components";
-import Link from "next/link";
+import { NabBarLogo, NavBarList } from "../components";
+import { IoMenu } from "react-icons/io5";
 
 export const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,26 +14,21 @@ export const NavBar = () => {
   };
 
   return (
-    <div className="flex items-center justify-between flex-wrap shadow-md">
-      <NabBarLogo />
-      <div className="block lg:hidden">
-        <Button onClick={handleBurger}> test</Button>
-      </div>
-      <div
-        className={`flex-grow lg:flex lg:items-center lg:w-auto ${
-          isOpen ? "block" : "hidden"
-        }`}
-      >
+    <div className="lg:flex items-center shadow-md">
+      <div className=" flex items-center justify-between px-4">
+        <NabBarLogo />
         <Divider />
-        <div className="lg:flex-grow space-x-5">
-          <Link href="/">Home</Link>
-          <Link href="/education">Education</Link>
+        <div className="lg:hidden">
+          <Button onClick={handleBurger}>
+            <IoMenu size={50} />
+          </Button>
         </div>
-        <Divider />
-        <Button className="mr-5" variant="classic">
-          <Text variant="body" className="text-buttonText">
-            Me Contacter
-          </Text>
+      </div>
+      <NavBarList isOpen />
+      <Divider />
+      <div className="flex justify-center">
+        <Button className="lg:mr-4 mb-5 lg:mb-0" variant="classic">
+          <Text className="text-buttonText">Me Contacter</Text>
         </Button>
       </div>
     </div>

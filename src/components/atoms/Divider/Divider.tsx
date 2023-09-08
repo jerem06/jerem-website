@@ -7,6 +7,9 @@ export const Divider = ({
   ...props
 }: IDividerProps) => {
   return (
-    <div className={twMerge("h-14 w-0.5 mx-5", color, className)} {...props} />
+    <div
+      className={twMerge("h-14 w-0.5 mx-4 hidden lg:block ", color, className)}
+      {...props}
+    />
   );
 };
