@@ -56,4 +56,5 @@ module.exports = {
   },
   buttonText: "#001e1d",
   headline: "#fffffe",
+  paragraph: "#abd1c6",
 };

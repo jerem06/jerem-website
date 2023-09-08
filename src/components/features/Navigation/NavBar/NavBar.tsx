@@ -24,9 +24,9 @@ export const NavBar = () => {
           </Button>
         </div>
       </div>
-      <NavBarList isOpen />
+      <NavBarList isOpen={isOpen} />
       <Divider />
-      <div className="flex justify-center">
+      <div className={`lg:flex justify-center ${isOpen ? "flex" : "hidden"}`}>
         <Button className="lg:mr-4 mb-5 lg:mb-0" variant="classic">
           <Text className="text-buttonText">Me Contacter</Text>
         </Button>

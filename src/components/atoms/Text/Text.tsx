@@ -28,7 +28,7 @@ export const Text = ({
       );
     default:
       return (
-        <div className={`${className}`} {...props}>
+        <div className={twMerge("text-paragraph", className)} {...props}>
           {children}
         </div>
       );
