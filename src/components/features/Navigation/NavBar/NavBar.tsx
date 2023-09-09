@@ -14,7 +14,7 @@ export const NavBar = () => {
   };
 
   return (
-    <div className="lg:flex items-center shadow-md">
+    <div className="lg:flex z-10 fixed w-full items-center shadow-md bg-background-900">
       <div className=" flex items-center justify-between px-4">
         <NabBarLogo />
         <Divider />
