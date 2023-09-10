@@ -26,9 +26,9 @@ export default function Home() {
               <strong className="font-bold text-highlight-900">
                 Native, React, et Next
               </strong>{" "}
-              avec plus de 3 ans d'expérience dans le domaine du développement
-              web et mobile, je suis passionné par la création d'interfaces
-              offrant des{" "}
+              avec plus de 3 ans d&#39;expérience dans le domaine du
+              développement web et mobile, je suis passionné par la création
+              d&#39;interfaces offrant des{" "}
               <strong className="font-bold text-highlight-900">UX / UI</strong>{" "}
               exceptionnelles.
               <p>
