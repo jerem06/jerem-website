@@ -25,8 +25,8 @@ export default function Education() {
 
       <div className="my-10 lg:my-20 pl-5 md:pl-10 flex flex-col md:flex-row">
         <div>
-          <Text>L'ESILV</Text>
-          <Text>Top 3 école d'ingénieur Française 2023 </Text>
+          <Text>L&#39;ESILV</Text>
+          <Text>Top 3 école d&#39;ingénieur Française 2023 </Text>
           <p className="md:w-2/3">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione eos
             nam aspernatur iure cumque provident officiis culpa enim consequatur
