@@ -1,6 +1,7 @@
 import React from "react";
 import { Text } from "@/components/atoms";
 import { Carousel } from "@/components/organisms";
+import Image from "next/image";
 
 const slides = [
   {
@@ -21,7 +22,62 @@ export default function Education() {
         Un parcours élitiste
       </Text>
       <Carousel data={slides} />
-      <Text>Un parcours élitiste</Text>
+
+      <div className="my-10 lg:my-20 pl-5 md:pl-10 flex flex-col md:flex-row">
+        <div>
+          <Text>L'ESILV</Text>
+          <Text>Top 3 école d'ingénieur Française 2023 </Text>
+          <p className="md:w-2/3">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione eos
+            nam aspernatur iure cumque provident officiis culpa enim consequatur
+            quaerat recusandae praesentium maiores voluptatum porro cupiditate
+            commodi, laborum, ipsa quam. nam aspernatur iure cumque provident
+            officiis culpa enim consequatur quaerat recusandae praesentium
+            maiores voluptatum porro cupiditate commodi, laborum, ipsa quam. nam
+            aspernatur iure cumque provident officiis culpa enim consequatur
+            quaerat recusandae praesentium maiores voluptatum porro cupiditate
+            commodi, laborum, ipsa quam. nam aspernatur iure cumque provident
+            officiis culpa enim consequatur quaerat recusandae praesentium
+            maiores voluptatum porro cupiditate commodi, laborum, ipsa quam.
+          </p>
+        </div>
+
+        <Image
+          className="ml-auto"
+          src="/shapes/shape3.png"
+          quality={100}
+          width={100}
+          height={100}
+          alt="test"
+        />
+      </div>
+      <div className="my-10 lg:my-20 pl-5 md:pl-10 flex flex-col md:flex-row">
+        <div>
+          <Text>L'ESILV</Text>
+          <Text>Top 3 école d'ingénieur Française 2023 </Text>
+          <p className="md:w-2/3">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione eos
+            nam aspernatur iure cumque provident officiis culpa enim consequatur
+            quaerat recusandae praesentium maiores voluptatum porro cupiditate
+            commodi, laborum, ipsa quam. nam aspernatur iure cumque provident
+            officiis culpa enim consequatur quaerat recusandae praesentium
+            maiores voluptatum porro cupiditate commodi, laborum, ipsa quam. nam
+            aspernatur iure cumque provident officiis culpa enim consequatur
+            quaerat recusandae praesentium maiores voluptatum porro cupiditate
+            commodi, laborum, ipsa quam. nam aspernatur iure cumque provident
+            officiis culpa enim consequatur quaerat recusandae praesentium
+            maiores voluptatum porro cupiditate commodi, laborum, ipsa quam.
+          </p>
+        </div>
+        <Image
+          className="ml-auto"
+          src="/shapes/shape4.png"
+          quality={100}
+          width={100}
+          height={100}
+          alt="test"
+        />
+      </div>
     </div>
   );
 }
