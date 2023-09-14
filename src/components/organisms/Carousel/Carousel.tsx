@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { ICarouselProps } from "./Carousel.props";
 import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
 

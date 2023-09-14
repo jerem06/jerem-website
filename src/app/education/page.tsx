@@ -2,6 +2,7 @@ import React from "react";
 import { Text } from "@/components/atoms";
 import { Carousel } from "@/components/organisms";
 import Image from "next/image";
+import { SkillCardList } from "./components";
 
 const slides = [
   {
@@ -24,10 +25,10 @@ export default function Education() {
       <Carousel data={slides} />
 
       <div className="my-10 lg:my-20 pl-5 md:pl-10 flex flex-col md:flex-row">
-        <div>
+        <div className="md:w-2/3">
           <Text>L&#39;ESILV</Text>
           <Text>Top 3 école d&#39;ingénieur Française 2023 </Text>
-          <p className="md:w-2/3">
+          <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione eos
             nam aspernatur iure cumque provident officiis culpa enim consequatur
             quaerat recusandae praesentium maiores voluptatum porro cupiditate
@@ -51,11 +52,40 @@ export default function Education() {
           alt="test"
         />
       </div>
-      <div className="my-10 lg:my-20 pl-5 md:pl-10 flex flex-col md:flex-row">
+      <SkillCardList />
+      <div className="my-10 lg:my-20 pl-5 md:pl-10 flex flex-col md:flex-row w-full justify-between items-center">
         <div>
+          <Image
+            className="ml-auto"
+            src="/shapes/shape5.png"
+            quality={100}
+            width={400}
+            height={100}
+            alt="test"
+          />
+        </div>
+
+        <div className="md:w-1/2">
+          <Text>L&#39;ESILV</Text>
+          <Text>Top 3 école d&#39;ingénieur Française 2023 </Text>
+          <p>
+            nam aspernatur iure cumque provident officiis culpa enim consequatur
+            quaerat recusandae praesentium maiores voluptatum porro cupiditate
+            commodi, laborum, ipsa quam. nam aspernatur iure cumque provident
+            officiis culpa enim consequatur quaerat recusandae praesentium
+            maiores voluptatum porro cupiditate commodi, laborum, ipsa quam. nam
+            aspernatur iure cumque provident officiis culpa enim consequatur
+            quaerat recusandae praesentium maiores voluptatum porro cupiditate
+            commodi, laborum, ipsa quam. nam aspernatur iure cumque provident
+          </p>
+        </div>
+      </div>
+      <SkillCardList />
+      <div className="my-10 lg:my-20 pl-5 md:pl-10 flex flex-col md:flex-row ">
+        <div className="md:w-2/3">
           <Text>L'ESILV</Text>
           <Text>Top 3 école d'ingénieur Française 2023 </Text>
-          <p className="md:w-2/3">
+          <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione eos
             nam aspernatur iure cumque provident officiis culpa enim consequatur
             quaerat recusandae praesentium maiores voluptatum porro cupiditate
