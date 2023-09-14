@@ -4,15 +4,15 @@ import { SkillCard } from "../SkillCard";
 
 export const SkillCardList = () => {
   const data = [
-    { name: "test", icon: <IoChevronBackOutline key={1} /> },
-    { name: "test", icon: <IoChevronForwardOutline key={2} /> },
-    { name: "test", icon: <IoChevronForwardOutline key={3} /> },
+    { name: "test", icon: <IoChevronBackOutline /> },
+    { name: "test", icon: <IoChevronForwardOutline /> },
+    { name: "test", icon: <IoChevronForwardOutline /> },
   ];
 
   return (
     <div className="flex flex-wrap justify-center">
       {data?.map((item: any, index: number) => {
-        return <SkillCard item={item} />;
+        return <SkillCard key={index} item={item} />;
       })}
     </div>
   );
