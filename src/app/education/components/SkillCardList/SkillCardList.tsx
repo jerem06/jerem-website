@@ -4,9 +4,9 @@ import { SkillCard } from "../SkillCard";
 
 export const SkillCardList = () => {
   const data = [
-    { name: "test", icon: <IoChevronBackOutline /> },
-    { name: "test", icon: <IoChevronForwardOutline /> },
-    { name: "test", icon: <IoChevronForwardOutline /> },
+    { name: "test", icon: <IoChevronBackOutline key={1} /> },
+    { name: "test", icon: <IoChevronForwardOutline key={2} /> },
+    { name: "test", icon: <IoChevronForwardOutline key={3} /> },
   ];
 
   return (
