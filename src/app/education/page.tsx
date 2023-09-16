@@ -1,8 +1,10 @@
+"use client";
 import React from "react";
 import { Text } from "@/components/atoms";
 import { Carousel } from "@/components/organisms";
 import Image from "next/image";
 import { SkillCardList } from "./components";
+import { motion } from "framer-motion";
 
 const slides = [
   {
@@ -54,15 +56,21 @@ export default function Education() {
       </div>
       <SkillCardList />
       <div className="my-10 lg:my-20 pl-5 md:pl-10 flex flex-col md:flex-row w-full justify-between items-center">
-        <div>
+        <div className="relative">
           <Image
-            className="ml-auto"
             src="/shapes/shape5.png"
             quality={100}
             width={400}
             height={100}
             alt="test"
           />
+          <motion.div
+            className="absolute top-0 left-6 w-full h-full"
+            animate={{ scale: [1, 0.8, 1] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          >
+            <Image src="/shapes/sparkle.png" quality={100} fill alt="test" />
+          </motion.div>
         </div>
 
         <div className="md:w-1/2">
@@ -108,6 +116,7 @@ export default function Education() {
           alt="test"
         />
       </div>
+      <SkillCardList />
     </div>
   );
 }

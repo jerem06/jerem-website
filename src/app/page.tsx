@@ -24,7 +24,7 @@ export default function Home() {
             <Text>
               Développeur{" "}
               <strong className="font-bold text-highlight-900">
-                Native, React, et Next
+                React Native, React, et Next
               </strong>{" "}
               avec plus de 3 ans d&#39;expérience dans le domaine du
               développement web et mobile, je suis passionné par la création
