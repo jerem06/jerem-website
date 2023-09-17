@@ -51,9 +51,30 @@ export default function Experience() {
 
       <div className="w-full sm:w-96 bg-primary-900 h-40 z-10 my-10">test</div>
       <div className="w-full z-10 flex flex-col sm:flex-row justify-around items-center">
-        <div className="flex flex-wrap justify-center ">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1, transition: { duration: 1.5 } }}
+          viewport={{ once: true }}
+          className="flex flex-wrap justify-center my-10"
+        >
           <SkillCardList asymetric />
-        </div>
+        </motion.div>
+        <motion.div
+          initial={{ x: "100%", opacity: 0 }} // Start the element off the screen to the right
+          whileInView={{ x: "0%", opacity: 1, transition: { duration: 1 } }}
+          viewport={{ once: true }}
+          className="bg-primary-900 max-w-xs lg:max-w-sm"
+        >
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
+            laborum officia necessitatibus earum dicta consequatur eligendi sed
+            molestias inventore, eius blanditiis corporis ut veritatis beatae,
+            autem vero culpa a sequi.
+          </p>
+        </motion.div>
+      </div>
+      <div className="w-full sm:w-96 bg-primary-900 h-40 z-10 my-10">test</div>
+      <div className="w-full z-10 flex flex-col sm:flex-row justify-around items-center">
         <div className="bg-primary-900 max-w-xs lg:max-w-sm">
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
@@ -61,6 +82,9 @@ export default function Experience() {
             molestias inventore, eius blanditiis corporis ut veritatis beatae,
             autem vero culpa a sequi.
           </p>
+        </div>
+        <div className="flex flex-wrap justify-center my-10 ">
+          <SkillCardList asymetric />
         </div>
       </div>
     </div>

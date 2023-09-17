@@ -13,6 +13,10 @@ export const NavBar = () => {
     setIsOpen((current) => !current);
   };
 
+  const handleClose = () => {
+    setIsOpen(false);
+  };
+
   return (
     <div className="lg:flex z-20 fixed w-full items-center shadow-md bg-background-900">
       <div className=" flex items-center justify-between px-4">
@@ -24,7 +28,7 @@ export const NavBar = () => {
           </Button>
         </div>
       </div>
-      <NavBarList isOpen={isOpen} />
+      <NavBarList isOpen={isOpen} handleClose={handleClose} />
       <Divider />
       <div className={`lg:flex justify-center ${isOpen ? "flex" : "hidden"}`}>
         <Button className="lg:mr-4 mb-5 lg:mb-0" variant="classic">

@@ -10,7 +10,7 @@ const links = [
   { href: "contact", text: "Contact" },
 ];
 
-export const NavBarList = ({ isOpen }: INavBarList) => {
+export const NavBarList = ({ isOpen, handleClose }: INavBarList) => {
   return (
     <ul
       className={`${
@@ -19,6 +19,7 @@ export const NavBarList = ({ isOpen }: INavBarList) => {
     >
       {links.map((link, index) => (
         <li
+          onClick={handleClose}
           key={index}
           className={`${
             index !== 0 ? "mt-1 lg:mt-0 lg:ml-2" : ""
