@@ -29,6 +29,15 @@ const data2 = [
   { name: "test 5", id: "5" },
 ];
 
+interface Skill {
+  id: number;
+  name: string;
+}
+interface Column {
+  id: number;
+  skills: any;
+}
+
 export default function Contact() {
   const handleOnDragEnd = (result: DropResult) => {
     const { destination, source, type } = result;
@@ -38,10 +47,47 @@ export default function Contact() {
       "🚀 ~ file: page.tsx:35 ~ handleOnDragEnd ~ destination:",
       destination
     );
+
+    const startColIndex = Number(source.droppableId);
+    const finishColIndex = Number(destination?.droppableId);
+
+    const startCol: Column = {
+      id: startColIndex,
+      skills: skillList[startColIndex],
+    };
+
+    const finishCol: Column = {
+      id: finishColIndex,
+      skills: skillList[finishColIndex],
+    };
+
+    if (!destination) return;
+
+    if (startColIndex === finishColIndex && source.index === destination?.index)
+      return;
+
+    const newSkill = startCol.skills;
+    const [skillMouved] = newSkill.splice(source.index, 1);
+
+    if (startCol.id === finishCol.id) {
+      // drag and drop same colum
+      newSkill.splice(destination?.index, 0, skillMouved);
+      const updatedSkillList = [...skillList];
+      updatedSkillList[startCol.id] = newSkill;
+
+      setSkillList(updatedSkillList);
+    } else {
+      // drag and drop one column to another
+      const finishSkill = finishCol.skills;
+      finishSkill.splice(destination?.index, 0, skillMouved);
+      const updatedSkillList = [...skillList];
+      updatedSkillList[startCol.id] = newSkill;
+      updatedSkillList[finishCol.id] = finishSkill;
+      setSkillList(updatedSkillList);
+    }
   };
 
-  const [skillList, setSkillList] = useState(data1);
-  const [selectedSkill, setSelectedSkill] = useState(data2);
+  const [skillList, setSkillList] = useState([data1, data2]);
 
   return (
     <div className="pt-24">
@@ -105,14 +151,14 @@ export default function Contact() {
       </div>
 
       <DragDropContext onDragEnd={handleOnDragEnd}>
-        <Droppable droppableId="droppable-1" direction="horizontal">
+        <Droppable droppableId="0" direction="horizontal">
           {(provided, snapshot) => (
             <div
-              className="my-5 bg-primary-900 h-28 flex mx-10 rounded-md p-2"
+              className="my-5 min-h-[3rem] bg-primary-900 flex flex-wrap sm:mx-10 mx-5 rounded-md p-2"
               ref={provided.innerRef}
               {...provided.droppableProps}
             >
-              {skillList.map((item, index) => (
+              {skillList[0].map((item, index) => (
                 <Draggable key={item.id} draggableId={item.id} index={index}>
                   {(provided, snapshot) => (
                     <div
@@ -130,14 +176,14 @@ export default function Contact() {
           )}
         </Droppable>
         <div className="flex my-5 items-center">
-          <Droppable droppableId="droppable-2">
+          <Droppable droppableId="1">
             {(provided, snapshot) => (
               <div
-                className="bg-primary-900 h-28 flex mx-10 rounded-md p-2 w-fit flex-col "
+                className="bg-primary-900 min-h-[15rem] min-w-[6rem] flex sm:mx-10 mx-5 rounded-md p-2  flex-col "
                 ref={provided.innerRef}
                 {...provided.droppableProps}
               >
-                {selectedSkill.map((item, index) => (
+                {skillList[1].map((item, index) => (
                   <Draggable key={item.id} draggableId={item.id} index={index}>
                     {(provided, snapshot) => (
                       <div
